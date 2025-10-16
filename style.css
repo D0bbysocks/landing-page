@@ -1,0 +1,422 @@
+:root {
+/* Colors */
+    --cyan-600: #4D96A9;
+    --cyan-300: #8FE3F9;
+
+    --purple-600: #855FB1;
+    --purple-300: #D9B8FF;
+
+    --slate-900: #28283D;
+    --slate-600: #87879D;
+    --slate-300: #D1D1DF;
+
+    --white: #FAFAFA;
+
+
+/* Spacing */
+    --spacing-112: 7rem;
+    --spacing-80: 5rem;
+    --spacing-72: 4.5rem;
+    --spacing-64: 4rem;
+    --spacing-56: 3.5rem;
+    --spacing-48: 3rem;
+    --spacing-40: 2.5rem;
+    --spacing-32: 2rem;
+    --spacing-24: 1.5rem;
+    --spacing-16: 1rem;
+    --spacing-8: .5rem;
+    --spacing-4: .25rem;
+
+
+
+/* Fonts */
+    --font-red-hat-display: 'Red Hat Display', sans-serif;
+
+  /* Line-Heights/Weights/Letter-Spacing wie gehabt … */
+  --preset1-line-height: 110%;
+  --preset2-line-height: 110%;
+  --preset3-line-height: 150%;
+  --preset4-line-height: 150%;
+  --preset5-line-height: 150%;
+
+  --preset1-letter-spacing: 0px;
+  --preset2-letter-spacing: 0px;
+  --preset3-letter-spacing: 0.25rem;
+  --preset4-letter-spacing: 0px;
+  --preset5-letter-spacing: 0px;
+
+  --preset1-weight: 900;
+  --preset2-weight: 900;
+  --preset3-weight: 900;
+  --preset4-weight: 500;
+  --preset5-weight: 900;
+
+  /* Default: Mobile-Kante (≤375px) */
+  --preset1-size: 2.5rem; /* 40px @375 */
+  --preset2-size: 2rem;   /* 32px @375 */
+  --preset3-size: 0.75rem;/* 12px @375 */
+  --preset4-size: 1rem;   /* 16px @375 */
+  --preset5-size: 1rem;   /* 16px @375 */
+}
+
+@font-face {
+    font-family: "Red Hat Display";
+    src: url(./Fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+/* Simple Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, svg {
+  display: block;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
+input, textarea, select {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: inherit;
+  font-weight: inherit;
+}
+
+
+
+/* Utility-Klassen */
+.preset1 {
+  font-family: var(--font-red-hat-display);
+  font-size: var(--preset1-size);
+  line-height: var(--preset1-line-height);
+  letter-spacing: var(--preset1-letter-spacing);
+  font-weight: var(--preset1-weight);
+  color: var(--slate-900);
+}
+
+.preset2 {
+  font-family: var(--font-red-hat-display);
+  font-size: var(--preset2-size);
+  line-height: var(--preset2-line-height);
+  letter-spacing: var(--preset2-letter-spacing);
+  font-weight: var(--preset2-weight);
+}
+
+.preset3 {
+  font-family: var(--font-red-hat-display);
+  font-size: var(--preset3-size);
+  line-height: var(--preset3-line-height);
+  letter-spacing: var(--preset3-letter-spacing);
+  font-weight: var(--preset3-weight);
+}
+
+.preset4 {
+  font-family: var(--font-red-hat-display);
+  font-size: var(--preset4-size);
+  line-height: var(--preset4-line-height);
+  letter-spacing: var(--preset4-letter-spacing);
+  font-weight: var(--preset4-weight);
+  color: var(--slate-600);
+}
+
+.preset5 {
+  font-family: var(--font-red-hat-display);
+  font-size: var(--preset5-size);
+  line-height: var(--preset5-line-height);
+  letter-spacing: var(--preset5-letter-spacing);
+  font-weight: var(--preset5-weight);
+}
+
+/* Layout */
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+
+}
+
+
+/* Header */
+header {
+    margin-top: var(--spacing-48);
+}
+main {
+    margin-top: var(--spacing-64);
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  overflow-x: clip;     /* nur horizontal clippen */
+  overflow-y: visible;  /* vertikal NICHT clippen */
+}
+
+.bubble-card {
+  width: 100%;
+  max-width: none;
+  transform: scale(1.15);
+  transform-origin: center;
+}
+
+.hero-content {
+  margin: 0 var(--spacing-32);
+  max-width: 305px;
+  margin-inline: auto;
+}
+
+
+/*  */
+/* HERO BLOCK */
+
+.main-content {
+  margin: 0 var(--spacing-32);
+}
+
+main h1 {
+  margin-top: var(--spacing-48);
+}
+
+main p {
+  margin-top: var(--spacing-24);
+}
+
+.download-btn {
+  margin-top: var(--spacing-24);
+}
+
+/* btn */
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-16);
+    width: auto;
+}
+
+button {
+    border-radius: 1.8125rem;
+    padding: var(--spacing-16) var(--spacing-40);
+    color: var(--white);
+    border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.download-btn {
+    background-color: var(--cyan-600);
+}
+
+.download-btn:hover {
+    background-color: #71C0D4;
+}
+
+.download-btn span {
+  color: var(--cyan-300);
+}
+
+.what--i-btn {
+    background-color: var(--purple-600);
+}
+
+.what--i-btn:hover {
+  background-color: #B18BDD;
+}
+
+/* round number design */
+.style-number {
+  display: inline-block;
+  position: relative;
+  border: 1px solid var(--slate-300);
+  border-radius: 50%;
+  padding: 1.5rem;
+  color: var(--slate-600);
+}
+
+.main-content .style-number {
+  margin-top: 10.75rem;
+}
+
+.style-number::before {
+  content: "";
+  position: absolute;
+  top: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--slate-300);
+  width: 1px;
+  height: 5rem;
+}
+
+
+.pic-quartett {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: var(--spacing-64);
+  max-width: 100%;
+}
+
+.pic-quartett img {
+  flex: 0 0 calc(50% - 0.5rem);
+  max-width: calc(50% - 0.5rem);
+  width: 147.5px;
+  aspect-ratio: 174.5 / 144;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+.main-content--text p:first-of-type {
+  margin-top: var(--spacing-64);
+  color: var(--cyan-600);
+}
+
+.main-content--text h2 {
+  margin-top: var(--spacing-16);
+  color: var(--slate-900);
+}
+
+.main-content--text p:last-of-type {
+  margin-top: var(--spacing-32);
+  color: var(--slate-600);
+}
+
+
+
+
+/*  */
+/* Footer */
+footer {
+  position: relative;
+  width: 100vw;
+  padding: var(--spacing-64) var(--spacing-32);
+  margin-top: 10.75rem;
+  aspect-ratio: 375 / 374;
+  background-image: url(./starter-code/assets/mobile/image-footer.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.style-number:last-of-type {
+  background-color: var(--white);
+}
+
+footer .style-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: var(--white);
+}
+
+
+/* >>> Overlay-Schicht <<< */
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  background: rgba(77, 150, 169, 0.9);
+  z-index: 0; /* unter dem Text */
+}
+
+/* Text über dem Overlay */
+footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+footer h2 {
+  color: var(--white);
+}
+
+footer .preset4 {
+  margin-top: var(--spacing-24) ;
+  color: var(--white);
+}
+
+footer .download-btn {
+  margin-top: var(--spacing-24);
+  background-color: var(--purple-600);
+  z-index: 2;
+}
+
+footer .download-btn span {
+  color: var(--purple-300);
+}
+
+footer .download-btn:hover {
+  background-color: #B18BDD;
+}
+
+/* ========================================= */
+/* ===============  TABLET  ================ */
+/* ========================================= */
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* ---------- Fonts ---------- */
+  :root {
+    --preset1-size: 3rem;     /* 48 px  */
+    --preset2-size: 2.25rem;  /* 36 px  */
+    --preset3-size: 0.875rem; /* 14 px  */
+    --preset4-size: 1rem;     /* 16 px  */
+    --preset5-size: 1rem;     /* 16 px  */
+  }
+
+  /* ---------- Layout ---------- */
+  .container {
+    max-width: 1279px;
+  }
+
+  header {
+    margin-top: var(--spacing-72);
+  }
+
+
+  .hero-content h1 {
+    margin-top: var(--spacing-72);
+  }
+
+  .pic-quartett {
+    gap: var(--spacing-24);
+  }
+
+  .btn {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero-content{
+    max-width: 680px;
+
+  }
+  .download-btn {
+    margin-top: 0;
+  }
+}
