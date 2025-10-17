@@ -167,8 +167,12 @@ main {
 .hero {
   position: relative;
   width: 100vw;
-  overflow-x: clip;     /* nur horizontal clippen */
-  overflow-y: visible;  /* vertikal NICHT clippen */
+  overflow-x: clip;
+  overflow-y: visible;  
+}
+
+.pc {
+  display: none;
 }
 
 .bubble-card {
@@ -202,6 +206,9 @@ main p {
 
 .download-btn {
   margin-top: var(--spacing-24);
+  background-color: var(--cyan-600);
+  width: fit-content;
+  height: fit-content;
 }
 
 /* btn */
@@ -224,9 +231,6 @@ button:hover {
   cursor: pointer;
 }
 
-.download-btn {
-    background-color: var(--cyan-600);
-}
 
 .download-btn:hover {
     background-color: #71C0D4;
@@ -321,7 +325,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .style-number:last-of-type {
@@ -395,11 +399,29 @@ footer .download-btn:hover {
   }
 
   header {
-    margin-top: var(--spacing-72);
+    margin-top: var(--spacing-48);
   }
 
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bubble-card {
+    height: 303px;
+    width: 820px;
+    aspect-ratio: 820 / 303;
+    transform: scale(1);
+
+  }
+
+  .hero-content {
+    max-width: 448.3px;
+  }
 
   .hero-content h1 {
+    padding: 0 3.3rem;
     margin-top: var(--spacing-72);
   }
 
@@ -410,13 +432,211 @@ footer .download-btn:hover {
   .btn {
     flex-direction: row;
     justify-content: center;
+    margin-top: var(--spacing-24);
   }
 
-  .hero-content{
-    max-width: 680px;
-
-  }
   .download-btn {
     margin-top: 0;
   }
+
+  /* Pics */
+  .pic-quartett {
+    justify-content: space-between;
+    gap: var(--spacing-24);
+  }
+
+  .pic-quartett img {
+  flex: 0 0 calc((100% - (3 * 24px)) / 4);
+  width: calc((100% - 64px - (3 * 24px)) / 4);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-content--text {
+    max-width: 504px;
+  }
+
+  .main-content--text h2 {
+    padding: 0 2.5rem;
+  }
+
+  /* Footer */
+  footer {
+    background-image: url(./starter-code/assets/tablet/image-footer.jpg);
+    aspect-ratio: 768 / 320;
+  }
+
+  .footer-content {
+    max-width: 504px;
+  }
 }
+
+/* ========================================= */
+/* ===============    PC    ================ */
+/* ========================================= */
+@media (min-width: 1280px)  {
+  :root {
+    /* ================================
+       PC / Desktop Font Presets
+       ================================ */
+
+    /* Font Sizes */
+    --preset1-size: 4rem;      /* 64px – Hero Headline */
+    --preset2-size: 2.5rem;    /* 40px – Section Headline */
+    --preset3-size: 1rem;      /* 16px – Small uppercase text */
+    --preset4-size: 1.125rem;  /* 18px – Body text */
+    --preset5-size: 1rem;      /* 16px – Buttons / Small headings */
+
+    /* Line Heights */
+    --preset1-line-height: 110%;
+    --preset2-line-height: 110%;
+    --preset3-line-height: 150%;
+    --preset4-line-height: 150%;
+    --preset5-line-height: 150%;
+
+    /* Letter Spacing */
+    --preset1-letter-spacing: 0px;
+    --preset2-letter-spacing: 0px;
+    --preset3-letter-spacing: 0.25rem;
+    --preset4-letter-spacing: 0px;
+    --preset5-letter-spacing: 0px;
+
+    /* Font Weights */
+    --preset1-weight: 900;
+    --preset2-weight: 900;
+    --preset3-weight: 900;
+    --preset4-weight: 500;
+    --preset5-weight: 900;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    margin-top: var(--spacing-80);
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 450px 1fr;
+    max-height: 360px;
+    width: 100vw;
+    padding: var(--spacing-64) 0;
+    gap: var(--spacing-32);
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 450px;
+    max-height: fit-content;
+  }
+
+  .hero-content h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .pc {
+    display: block;
+    max-height: 85%;
+  }
+
+  .bubble-card-left {
+    grid-column: 1;
+    justify-self: start;  
+    align-self: start; 
+    transform: translateX(-1.2rem);  
+  }
+
+  .bubble-card-right {
+    grid-column: 3;
+    justify-self: end;  
+    align-self: end;
+    transform: translateX(1.2rem)
+  }
+
+  main {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bubble-card {
+    display: none;
+  }
+
+  .main-content {
+    margin: 0 var(--spacing-80);
+    max-width: 77.78%;
+  }
+
+  .pic-quartett img {
+  flex: 0 0 calc((100% - (3 * 24px)) / 4);
+  width: calc((100% - 64px - (3 * 24px)) / 4);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  }
+
+  .btn {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: var(--spacing-24);
+  }
+
+  .download-btn {
+    margin-top: 0;
+  }
+
+    /* Footer */
+  footer {
+    position: relative;
+    display: grid;               /* Box in beide Richtungen zentrieren */
+    place-items: center;         /* = align-items + justify-items */
+    background-image: url(./starter-code/assets/desktop/image-footer.jpg);
+    aspect-ratio: 1440 / 312;
+    padding: var(--spacing-112) var(--spacing-80); /* damit Luft bleibt */
+  }
+
+  .footer-content {
+    /* NICHT absolut positionieren und NICHT 100% width/height */
+    position: static;
+    width: auto;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 450px 350px 250px;
+    gap: var(--spacing-32);
+    text-align: left;
+
+    /* Items in ihren Zellen oben ausrichten */
+    align-items: start;          /* vertikal pro Zelle = oben */
+    justify-items: start;        /* horizontal pro Zelle = links */
+  }
+  /* margin reset footer content */
+  .footer-content .preset4, .footer-content .download-btn {
+    margin-top: 0;
+  }
+
+  footer .download-btn {
+    justify-self: end;           /* rechts in der dritten Spalte */
+    align-self: start;           /* oben ausrichten */
+    margin-top: 0;               /* wichtig: kein zusätzlicher Top-Abstand */
+    width: fit-content;
+  }
+}
+
+  
